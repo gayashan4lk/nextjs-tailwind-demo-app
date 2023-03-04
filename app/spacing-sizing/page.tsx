@@ -1,3 +1,5 @@
+import Button from '@/components/button/Button';
+
 const SpacingPage = () => {
 	return (
 		<>
@@ -11,6 +13,7 @@ const SpacingPage = () => {
 			>
 				<p className='font-bold text-white text-3xl'>-mt-8</p>
 			</div>
+			<Button link='/' label='Home' />
 		</>
 	);
 };

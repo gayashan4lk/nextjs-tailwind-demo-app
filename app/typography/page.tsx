@@ -1,3 +1,5 @@
+import Button from '@/components/button/Button';
+
 const TypographyPage = () => {
 	return (
 		<>
@@ -14,6 +16,7 @@ const TypographyPage = () => {
 			<p>A regular paragraph</p>
 			<p>A description paragraph</p>
 			<p className='note'>A little note</p>
+			<Button link='/' label='Home' />
 		</>
 	);
 };
