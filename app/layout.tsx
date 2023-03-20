@@ -14,7 +14,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ReactQueryWrapper>{children}</ReactQueryWrapper>
+        <ReactQueryWrapper>
+          <div className="this-is-root-layout">{children}</div>
+        </ReactQueryWrapper>
       </body>
     </html>
   )
