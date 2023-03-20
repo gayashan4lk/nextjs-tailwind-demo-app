@@ -1,4 +1,5 @@
 import './globals.css'
+import ReactQueryWrapper from './ReactQueryWrapper'
 
 export const metadata = {
   title: 'Create Next App',
@@ -12,7 +13,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <ReactQueryWrapper>{children}</ReactQueryWrapper>
+      </body>
     </html>
   )
 }
