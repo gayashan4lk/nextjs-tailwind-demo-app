@@ -1,5 +1,4 @@
-import CityData from '@/components/city-data/CityData'
-import { displayValue } from '@tanstack/react-query-devtools/build/lib/utils'
+import Button from '@/components/button/Button'
 
 type Props = {
   params: {
@@ -37,7 +36,7 @@ async function fetchCityWithoutPoI(id: string) {
     )
     return (await city.json()) as City
   } catch (e) {
-    console.error(e)
+    console.error(`fetchCityWithoutPoI failed\n ${e}`)
   }
 }
 
@@ -51,13 +50,25 @@ async function fetchPost(id: string) {
     )
     return (await res.json()) as Post
   } catch (e) {
+    console.error('fetchPost failed')
     console.error(e)
   }
 }
 
-export default async function Page({ params: { id } }: Props) {
+async function fetchTestData() {
+  try {
+    const res = await fetch(`http://localhost:3000/api`)
+    return await res.json()
+  } catch (e) {
+    console.error('fetchTestData failed')
+    console.error(e)
+  }
+}
+
+export default async function DataFetchingPage({ params: { id } }: Props) {
   const post = await fetchPost(id)
   const city = await fetchCityWithoutPoI(id)
+  const data = await fetchTestData()
 
   return (
     <>
@@ -78,6 +89,19 @@ export default async function Page({ params: { id } }: Props) {
           <p>{city.description}</p>
         </div>
       )}
+
+      {data && (
+        <div>
+          <ul>
+            {data.data.map((x: any) => (
+              <li key={x.id}>
+                I'm'{x.name}. I'm {x.age} years old. I'm from {x.country}.
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      <Button link="/" label="Home" />
     </>
   )
 }

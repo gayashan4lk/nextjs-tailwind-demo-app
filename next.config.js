@@ -4,9 +4,6 @@ const nextConfig = {
     appDir: true,
     enableUndici: true,
   },
-  server: {
-    https: false,
-  },
 }
 
 module.exports = nextConfig
