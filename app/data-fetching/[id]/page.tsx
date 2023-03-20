@@ -73,7 +73,7 @@ export default async function DataFetchingPage({ params: { id } }: Props) {
   return (
     <>
       {post && (
-        <div>
+        <div className="posts">
           <h1 className="text-xl">Post Info</h1>
           <h3 className="text-md font-bold">
             {post.id} : {post.title}
@@ -83,7 +83,7 @@ export default async function DataFetchingPage({ params: { id } }: Props) {
       )}
 
       {city && (
-        <div>
+        <div className="city">
           <h1 className="text-xl">City Info</h1>
           <h3 className="text-md font-bold">{city.name}</h3>
           <p>{city.description}</p>
@@ -91,7 +91,7 @@ export default async function DataFetchingPage({ params: { id } }: Props) {
       )}
 
       {data && (
-        <div>
+        <div className="test-data">
           <ul>
             {data.data.map((x: any) => (
               <li key={x.id}>
