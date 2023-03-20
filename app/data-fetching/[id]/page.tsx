@@ -95,7 +95,7 @@ export default async function DataFetchingPage({ params: { id } }: Props) {
           <ul>
             {data.data.map((x: any) => (
               <li key={x.id}>
-                I'm'{x.name}. I'm {x.age} years old. I'm from {x.country}.
+                I am{x.name}. I am {x.age} years old. I am from {x.country}.
               </li>
             ))}
           </ul>
